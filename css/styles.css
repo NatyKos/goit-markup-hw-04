@@ -73,6 +73,7 @@ body {
   color: #2e2f42;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link {
   font-size: 16px;
@@ -80,6 +81,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts {
   font-style: normal;
@@ -91,11 +93,33 @@ body {
 .address-link:focus {
   color: #404bbf;
 }
+.menu-item {
+  position: relative;
+}
+
+.menu-link.active::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  position: absolute;
+  bottom: -1px;
+  left: 0%;
+}
 
 .hero-section {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url('../images/hero/people-office.jpg');
+  max-width: 1440px;
+  background-size: cover;
 }
 .main-title {
   text-align: center;
@@ -128,6 +152,7 @@ body {
   height: 56px;
   border: none;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-ord:hover,
 .button-ord:focus {
@@ -179,6 +204,9 @@ h3 {
   background-color: #ffffff;
   width: calc((100% - 3 * 24px) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .team-person,
 .team-work {
@@ -218,6 +246,7 @@ h3 {
 .menu-address-item {
   padding: 24px 0;
 }
+
 .menu-address {
   display: flex;
   gap: 40px;
@@ -260,6 +289,7 @@ h3 {
   border-top: none;
 }
 .footer-section {
+  display: flex;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -269,4 +299,104 @@ h3 {
 .link-footer {
   display: inline-block;
   margin-bottom: 16px;
+}
+.rectangle-icon {
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background: #f4f4fd;
+  margin-bottom: 8px;
+  width: 264px;
+  height: 112px;
+}
+.icon {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.social-list-icon {
+  fill: none;
+  stroke: #f4f4fd;
+}
+.social-list {
+  display: flex;
+  gap: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 8px;
+}
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-list-link:focus,
+.social-list-link:hover {
+  background-color: #2e2f42;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px 164px 32px;
+  margin-bottom: 32px;
+}
+.portfolio-item:hover .overlay {
+  transform: translateY(0%);
+}
+.overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-item:hover {
+  border: 1px solid #f4f4fd;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+.social-card-header {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.social-card-footer {
+  padding-right: 692px;
+}
+.social-list-footer {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.social-list-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-list-link-footer:hover,
+.social-list-link-footer:focus {
+  background-color: #31d0aa;
 }
